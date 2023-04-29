@@ -1,0 +1,6 @@
+mounts:
+{% for mount in mounts %}
+  - path: {{ mount.path }}
+    src: {{ mount.src }}
+    fstype: {{ mount.fstype }}
+{% endfor %}

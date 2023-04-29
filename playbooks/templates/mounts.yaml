@@ -1,0 +1,10 @@
+mounts:
+  - path: /mnt/tela
+    src: /mnt/tela
+    fstype: ext4
+  - path: /mnt/forbin
+    src: /mnt/forbin
+    fstype: ext4
+  - path: /mnt/icculus
+    src: /mnt/icculus
+    fstype: ext4

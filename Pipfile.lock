@@ -1,0 +1,38 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "6bf686565811cb2a2f4b6178049e06bea6da8eb52df2a839c592aa1eabc1378f"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.10"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "playbooks": {
+            "editable": true,
+            "extras": [
+                "cli",
+                "tui"
+            ],
+            "path": "."
+        }
+    },
+    "develop": {
+        "playbooks": {
+            "editable": true,
+            "extras": [
+                "cli",
+                "tui"
+            ],
+            "path": "."
+        }
+    }
+}

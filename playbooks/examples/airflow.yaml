@@ -1,0 +1,28 @@
+---
+- name: Set up Airflow on Kubernetes cluster
+  hosts: localhost
+  tasks:
+    - name: Add Astronomer Helm repository
+      ansible.builtin.command: helm repo add astronomer https://helm.astronomer.io
+
+    - name: Update Helm repository
+      ansible.builtin.command: helm repo update
+
+    - name: Create Airflow namespace
+      community.kubernetes.k8s:
+        name: airflow
+        api_version: v1
+        kind: Namespace
+        state: present
+
+    - name: Install Astronomer Airflow chart
+      community.kubernetes.helm:
+        name: airflow
+        chart_ref: astronomer/airflow
+        release_namespace: airflow
+        create_namespace: yes
+        values:
+          executor: CeleryExecutor
+
+# TODO add airflow config
+# TODO template hosts
